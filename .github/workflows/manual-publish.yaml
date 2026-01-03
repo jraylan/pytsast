@@ -20,6 +20,11 @@ permissions:
 jobs:
   publish:
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+    environment:
+      name: pypi
+      url: https://pypi.org/project/pytsast/
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -34,62 +39,11 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install build twine
 
       - name: Build package
         run: python -m build
 
-      - name: Update version (if specified)
-        if: ${{ inputs.version != '' }}
-        run: |
-          # Update version in pyproject.toml
-          sed -i "s/version = \".*\"/version = \"${{ inputs.version }}\"/" pyproject.toml
-          echo "Updated version to ${{ inputs.version }}"
-
-      - name: Get package version
-        id: package-version
-        run: |
-          import tomllib
-          with open('pyproject.toml', 'rb') as f:
-              data = tomllib.load(f)
-          version = data['project']['version']
-          print(f'version={version}')
-          with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
-              f.write(f'version={version}\n')
-        shell: python
-
-      - name: Dry run publish
-        if: ${{ inputs.dry-run }}
-        run: |
-          twine upload --repository testpypi dist/*
-        env:
-          TWINE_USERNAME: __token__
-          TWINE_PASSWORD: ${{ secrets.TEST_PYPI_API_TOKEN }}
-
-      - name: Publish to PyPI
-        if: ${{ !inputs.dry-run }}
-        run: |
-          twine upload dist/*
-        env:
-          TWINE_USERNAME: __token__
-          TWINE_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
-
-      - name: Create Git tag
-        if: ${{ !inputs.dry-run && inputs.version != '' }}
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add pyproject.toml
-          git commit -m "chore: release v${{ steps.package-version.outputs.version }}" || echo "No changes to commit"
-          git tag -a "v${{ steps.package-version.outputs.version }}" -m "Release v${{ steps.package-version.outputs.version }}"
-          git push origin main --tags || echo "Failed to push, may need permissions"
-
-      - name: Summary
-        run: |
-          echo "## Published Package" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "- **Package:** pytsast" >> $GITHUB_STEP_SUMMARY
-          echo "- **Version:** ${{ steps.package-version.outputs.version }}" >> $GITHUB_STEP_SUMMARY
-          echo "- **Dry Run:** ${{ inputs.dry-run }}" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "[View on PyPI](https://pypi.org/project/pytsast/)" >> $GITHUB_STEP_SUMMARY
+      - name: Publish release distributions to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          packages-dir: dist/

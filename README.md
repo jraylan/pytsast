@@ -2,7 +2,7 @@
 
 Generate TypeScript code from Python using TypeScript's AST factory API.
 
-This library provides a Python interface to TypeScript's AST factory functions, allowing you to build TypeScript AST nodes programmatically and serialize them to JSON for consumption by TypeScript parsers like `@pytsast/tsparser`.
+This library provides a Python interface to TypeScript's AST factory functions, allowing you to build TypeScript AST nodes programmatically and serialize them to JSON for consumption by TypeScript parsers like `@pyts/tsparser`.
 
 ## Installation
 
@@ -148,7 +148,7 @@ Nodes serialize to JSON objects that can be consumed by TypeScript parsers:
 
 ## Integration with tsparser
 
-pytsast is designed to work with `@pytsast/tsparser` to generate actual TypeScript code:
+pytsast is designed to work with `@pyts/tsparser` to generate actual TypeScript code:
 
 ```python
 # Python side (pytsast)
@@ -162,8 +162,8 @@ json_str = json.dumps(node.serialize().model_dump())
 ```
 
 ```typescript
-// TypeScript side (@pytsast/tsparser)
-import { parseAndPrint } from '@pytsast/tsparser';
+// TypeScript side (@pyts/tsparser)
+import { parseAndPrint } from '@pyts/tsparser';
 
 const jsonFromPython = '...'; // JSON from Python
 const tsCode = parseAndPrint(jsonFromPython);
@@ -205,7 +205,7 @@ print(json_output)
 
 ```typescript
 // TypeScript: Parse and generate code
-import { parseAndPrint } from '@pytsast/tsparser';
+import { parseAndPrint } from '@pyts/tsparser';
 
 const jsonFromPython = `...`; // The JSON above
 const tsCode = parseAndPrint(jsonFromPython);
