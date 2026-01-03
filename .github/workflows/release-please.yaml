@@ -13,6 +13,8 @@ permissions:
 jobs:
   release-please:
     runs-on: ubuntu-latest
+    outputs:
+      release_created: ${{ steps.release.outputs.release_created }}
     steps:
       - uses: googleapis/release-please-action@v4
         id: release
@@ -26,15 +28,15 @@ jobs:
 
   release-build:
     runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v4
-
+    needs: release-please
+    if: ${{ needs.release-please.outputs.release_created == 'true' }} 
+    steps:      
       - uses: actions/setup-python@v5
         with:
           python-version: "3.x"
 
       - name: Build release distributions
+        if: ${{ needs.release-please.outputs.release_created }}
         run: |
           # NOTE: put your own distribution build steps here.
           python -m pip install build
@@ -49,17 +51,17 @@ jobs:
   pypi-publish:
     runs-on: ubuntu-latest
     needs: 
-      - release-please
       - release-build
-    if: ${{ needs.release-please.outputs.release_created }}
+    if: ${{ needs.release-please.outputs.release_created == 'true' }} 
     permissions:
       id-token: write
     environment:
       name: pypi
-      url: https://pypi.org/project/pytsast/${{ github.event.release.name }}
+      url: https://pypi.org/project/pytsast/
     steps:
       - name: Retrieve release distributions
         uses: actions/download-artifact@v4
+        if: ${{ needs.release-please.outputs.release_created }}
         with:
           name: release-dists
           path: dist/
