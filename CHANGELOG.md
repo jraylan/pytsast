@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.5](https://github.com/jraylan/pytsast/compare/v0.1.4...v0.1.5) (2026-01-03)
+
+
+### Bug Fixes
+
+* remove unnecessary condition on workflow ([fbb26f3](https://github.com/jraylan/pytsast/commit/fbb26f375017f21681f0b2a39f3783a9aab68132))
+
 ## [0.1.4](https://github.com/jraylan/pytsast/compare/v0.1.3...v0.1.4) (2026-01-03)
 
 
