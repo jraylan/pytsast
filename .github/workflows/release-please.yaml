@@ -58,7 +58,6 @@ jobs:
     steps:
       - name: Retrieve release distributions
         uses: actions/download-artifact@v4
-        if: ${{ needs.release-please.outputs.release_created }}
         with:
           name: release-dists
           path: dist/
