@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.4](https://github.com/jraylan/pytsast/compare/v0.1.3...v0.1.4) (2026-01-03)
+
+
+### Bug Fixes
+
+* fix workflow checkout ([bb53f7f](https://github.com/jraylan/pytsast/commit/bb53f7f9a2fbe9509f5ec3f7c8ddca038284dd37))
+
 ## [0.1.3](https://github.com/jraylan/pytsast/compare/v0.1.2...v0.1.3) (2026-01-03)
 
 
