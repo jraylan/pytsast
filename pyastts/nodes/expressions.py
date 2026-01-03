@@ -6,21 +6,21 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING, ClassVar, Sequence
 
-from pyastts.core.base import Node
-from pyastts.core.types import Undefined, undefined
-from pyastts.nodes.misc import Decorator
-from pyastts.nodes.modifiers import Modifier
+from pytsast.core.base import Node
+from pytsast.core.types import Undefined, undefined
+from pytsast.nodes.misc import Decorator
+from pytsast.nodes.modifiers import Modifier
 
 if TYPE_CHECKING:
-    from pyastts.nodes.common import Identifier, PrivateIdentifier
-    from pyastts.nodes.type_nodes import TypeNode
-    from pyastts.nodes.misc import (
+    from pytsast.nodes.common import Identifier, PrivateIdentifier
+    from pytsast.nodes.type_nodes import TypeNode
+    from pytsast.nodes.misc import (
         TemplateSpan,
         TemplateHead,
         Parameter,
         TypeParameter,
     )
-    from pyastts.nodes.statements import Block
+    from pytsast.nodes.statements import Block
 
 
 # Type alias for any expression

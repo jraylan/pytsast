@@ -5,7 +5,7 @@ This module mirrors the TypeScript factory API (ts.factory.*) for
 a familiar and consistent experience.
 
 Usage:
-    from pyastts import factory as ts
+    from pytsast import factory as ts
 
     import_decl = ts.createImportDeclaration(
         Undefined,
@@ -29,13 +29,13 @@ from __future__ import annotations
 
 from typing import Literal, Sequence, TypeAlias, Union
 
-from pyastts.core.base import Node
+from pytsast.core.base import Node
 
 # Import all nodes from the main nodes module (which rebuilds models)
-from pyastts.core.types import Undefined, undefined
+from pytsast.core.types import Undefined, undefined
 
 # Type aliases (defined after imports to use proper types)
-from pyastts.nodes import (
+from pytsast.nodes import (
     # Common
     Identifier,
     PrivateIdentifier,
@@ -249,7 +249,7 @@ from pyastts.nodes import (
     Token,
 )
 
-from pyastts.core.syntax_kind import SyntaxKind
+from pytsast.core.syntax_kind import SyntaxKind
 
 # =============================================================================
 # Type Aliases - Following TypeScript's union types for strict typing

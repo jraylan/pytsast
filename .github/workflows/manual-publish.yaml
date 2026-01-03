@@ -88,8 +88,8 @@ jobs:
         run: |
           echo "## Published Package" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "- **Package:** pyastts" >> $GITHUB_STEP_SUMMARY
+          echo "- **Package:** pytsast" >> $GITHUB_STEP_SUMMARY
           echo "- **Version:** ${{ steps.package-version.outputs.version }}" >> $GITHUB_STEP_SUMMARY
           echo "- **Dry Run:** ${{ inputs.dry-run }}" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "[View on PyPI](https://pypi.org/project/pyastts/)" >> $GITHUB_STEP_SUMMARY
+          echo "[View on PyPI](https://pypi.org/project/pytsast/)" >> $GITHUB_STEP_SUMMARY

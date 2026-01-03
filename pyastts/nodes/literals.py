@@ -6,8 +6,8 @@ from __future__ import annotations
 
 from typing import ClassVar
 
-from pyastts.core.base import Node
-from pyastts.core.types import Undefined, undefined
+from pytsast.core.base import Node
+from pytsast.core.types import Undefined, undefined
 
 
 class StringLiteral(Node):

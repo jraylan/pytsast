@@ -1,5 +1,5 @@
 """
-TypeScript SyntaxKind enum for pyastts.
+TypeScript SyntaxKind enum for pytsast.
 
 These values must match the TypeScript compiler's SyntaxKind enum.
 Values are from TypeScript 5.x compiler API.

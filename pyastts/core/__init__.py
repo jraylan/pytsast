@@ -2,8 +2,8 @@
 Core module - Base types and serialization infrastructure.
 """
 
-from pyastts.core.base import Node, NodeList
-from pyastts.core.types import (
+from pytsast.core.base import Node, NodeList
+from pytsast.core.types import (
     LiteralValue,
     Undefined,
     undefined,
@@ -13,8 +13,8 @@ from pyastts.core.types import (
     SerializedUndefined,
     SerializedNode,
 )
-from pyastts.core.serializer import Serializer
-from pyastts.core.syntax_kind import SyntaxKind, NodeFlags
+from pytsast.core.serializer import Serializer
+from pytsast.core.syntax_kind import SyntaxKind, NodeFlags
 
 __all__ = [
     "Node",

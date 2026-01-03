@@ -6,8 +6,8 @@ from __future__ import annotations
 
 from typing import ClassVar
 
-from pyastts.core.base import Node
-from pyastts.core.syntax_kind import SyntaxKind
+from pytsast.core.base import Node
+from pytsast.core.syntax_kind import SyntaxKind
 
 
 class Keyword(Node):

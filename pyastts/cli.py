@@ -2,9 +2,9 @@
 Helper functions to call tsparser CLI from Python.
 
 Usage:
-    from pyastts.cli import generate_typescript
+    from pytsast.cli import generate_typescript
 
-    import pyastts.factory as ts
+    import pytsast.factory as ts
 
     nodes = [
         ts.createImportDeclaration(
@@ -27,7 +27,7 @@ import subprocess
 from pathlib import Path
 from typing import Sequence
 
-from pyastts.core.base import Node
+from pytsast.core.base import Node
 
 
 def serialize_nodes(nodes: Sequence[Node]) -> str:

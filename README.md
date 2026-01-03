@@ -1,13 +1,13 @@
-# PyASTTS - Python TypeScript AST Generator
+# pytsast - Python TypeScript AST Generator
 
 Generate TypeScript code from Python using TypeScript's AST factory API.
 
-This library provides a Python interface to TypeScript's AST factory functions, allowing you to build TypeScript AST nodes programmatically and serialize them to JSON for consumption by TypeScript parsers like `@pyastts/tsparser`.
+This library provides a Python interface to TypeScript's AST factory functions, allowing you to build TypeScript AST nodes programmatically and serialize them to JSON for consumption by TypeScript parsers like `@pytsast/tsparser`.
 
 ## Installation
 
 ```bash
-pip install pyastts
+pip install pytsast
 ```
 
 ## Usage
@@ -15,7 +15,7 @@ pip install pyastts
 ### Basic Example
 
 ```python
-from pyastts import factory as ts
+from pytsast import factory as ts
 
 # Create a simple identifier
 identifier = ts.createIdentifier("myVariable")
@@ -28,7 +28,7 @@ print(json_output.model_dump_json(indent=2))
 ### Creating Complex Structures
 
 ```python
-from pyastts import factory as ts
+from pytsast import factory as ts
 
 # Create an import declaration
 import_decl = ts.createImportDeclaration(
@@ -78,8 +78,8 @@ print("Function:", func_decl.serialize().model_dump_json())
 ### Low-Level Node Creation
 
 ```python
-from pyastts.core import Node
-from pyastts.nodes.misc import Parameter
+from pytsast.core import Node
+from pytsast.nodes.misc import Parameter
 
 # Create nodes directly
 param = Parameter(
@@ -148,11 +148,11 @@ Nodes serialize to JSON objects that can be consumed by TypeScript parsers:
 
 ## Integration with tsparser
 
-PyASTTS is designed to work with `@pyastts/tsparser` to generate actual TypeScript code:
+pytsast is designed to work with `@pytsast/tsparser` to generate actual TypeScript code:
 
 ```python
-# Python side (pyastts)
-from pyastts import factory as ts
+# Python side (pytsast)
+from pytsast import factory as ts
 import json
 
 node = ts.createIdentifier("hello")
@@ -162,8 +162,8 @@ json_str = json.dumps(node.serialize().model_dump())
 ```
 
 ```typescript
-// TypeScript side (@pyastts/tsparser)
-import { parseAndPrint } from '@pyastts/tsparser';
+// TypeScript side (@pytsast/tsparser)
+import { parseAndPrint } from '@pytsast/tsparser';
 
 const jsonFromPython = '...'; // JSON from Python
 const tsCode = parseAndPrint(jsonFromPython);
@@ -174,7 +174,7 @@ console.log(tsCode); // hello
 
 ```python
 # Python: Generate a complete TypeScript interface
-from pyastts import factory as ts
+from pytsast import factory as ts
 import json
 
 interface = ts.createInterfaceDeclaration(
@@ -205,7 +205,7 @@ print(json_output)
 
 ```typescript
 // TypeScript: Parse and generate code
-import { parseAndPrint } from '@pyastts/tsparser';
+import { parseAndPrint } from '@pytsast/tsparser';
 
 const jsonFromPython = `...`; // The JSON above
 const tsCode = parseAndPrint(jsonFromPython);
@@ -219,6 +219,6 @@ console.log(tsCode);
 
 ## Architecture
 
-- `pyastts/core/` - Base types, serialization, and syntax kinds
-- `pyastts/nodes/` - AST node definitions and implementations
-- `pyastts/factory.py` - Factory functions (mirrors `ts.factory`)
+- `pytsast/core/` - Base types, serialization, and syntax kinds
+- `pytsast/nodes/` - AST node definitions and implementations
+- `pytsast/factory.py` - Factory functions (mirrors `ts.factory`)

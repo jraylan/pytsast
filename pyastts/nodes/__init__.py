@@ -4,18 +4,18 @@ TypeScript AST Nodes module.
 This module exports all AST node types organized by category.
 """
 
-from pyastts.core.base import Node
+from pytsast.core.base import Node
 
 
 # Base types
-from pyastts.nodes.common import (
+from pytsast.nodes.common import (
     Identifier,
     PrivateIdentifier,
     QualifiedName,
 )
 
 # Literals
-from pyastts.nodes.literals import (
+from pytsast.nodes.literals import (
     StringLiteral,
     NumericLiteral,
     BigIntLiteral,
@@ -27,7 +27,7 @@ from pyastts.nodes.literals import (
 )
 
 # Expressions
-from pyastts.nodes.expressions import (
+from pytsast.nodes.expressions import (
     ArrayLiteralExpression,
     ObjectLiteralExpression,
     PropertyAccessExpression,
@@ -63,7 +63,7 @@ from pyastts.nodes.expressions import (
 )
 
 # Statements
-from pyastts.nodes.statements import (
+from pytsast.nodes.statements import (
     Block,
     EmptyStatement,
     VariableStatement,
@@ -86,7 +86,7 @@ from pyastts.nodes.statements import (
 )
 
 # Declarations
-from pyastts.nodes.declarations import (
+from pytsast.nodes.declarations import (
     VariableDeclaration,
     VariableDeclarationList,
     FunctionDeclaration,
@@ -112,7 +112,7 @@ from pyastts.nodes.declarations import (
 )
 
 # Type nodes
-from pyastts.nodes.type_nodes import (
+from pytsast.nodes.type_nodes import (
     TypeReference,
     FunctionType,
     ConstructorType,
@@ -140,7 +140,7 @@ from pyastts.nodes.type_nodes import (
 )
 
 # Class elements
-from pyastts.nodes.class_elements import (
+from pytsast.nodes.class_elements import (
     PropertyDeclaration,
     MethodDeclaration,
     Constructor,
@@ -151,7 +151,7 @@ from pyastts.nodes.class_elements import (
 )
 
 # Object literal elements
-from pyastts.nodes.object_elements import (
+from pytsast.nodes.object_elements import (
     PropertyAssignment,
     ShorthandPropertyAssignment,
     SpreadAssignment,
@@ -161,14 +161,14 @@ from pyastts.nodes.object_elements import (
 )
 
 # Binding patterns
-from pyastts.nodes.bindings import (
+from pytsast.nodes.bindings import (
     ObjectBindingPattern,
     ArrayBindingPattern,
     BindingElement,
 )
 
 # Misc
-from pyastts.nodes.misc import (
+from pytsast.nodes.misc import (
     TemplateSpan,
     TemplateTail,
     TemplateMiddle,
@@ -206,7 +206,7 @@ from pyastts.nodes.misc import (
 )
 
 # Modifiers
-from pyastts.nodes.modifiers import (
+from pytsast.nodes.modifiers import (
     Modifier,
     ExportKeyword,
     DefaultKeyword,
@@ -226,7 +226,7 @@ from pyastts.nodes.modifiers import (
 )
 
 # Keywords
-from pyastts.nodes.keywords import (
+from pytsast.nodes.keywords import (
     VoidKeyword,
     NeverKeyword,
     AnyKeyword,
@@ -247,7 +247,7 @@ from pyastts.nodes.keywords import (
 )
 
 # Tokens
-from pyastts.nodes.tokens import (
+from pytsast.nodes.tokens import (
     Token,
     QuestionToken,
     ExclamationToken,
@@ -546,7 +546,7 @@ __all__ = [
 def _rebuild_models():
     """Rebuild all Pydantic models to resolve forward references."""
     import sys
-    from pyastts.core.base import Node
+    from pytsast.core.base import Node
 
     current_module = sys.modules[__name__]
 

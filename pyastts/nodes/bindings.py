@@ -6,12 +6,12 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING, ClassVar, Sequence
 
-from pyastts.core.base import Node
-from pyastts.core.types import Undefined, undefined
+from pytsast.core.base import Node
+from pytsast.core.types import Undefined, undefined
 
 if TYPE_CHECKING:
-    from pyastts.nodes.common import Identifier
-    from pyastts.nodes.expressions import Expression
+    from pytsast.nodes.common import Identifier
+    from pytsast.nodes.expressions import Expression
 
 
 class ObjectBindingPattern(Node):

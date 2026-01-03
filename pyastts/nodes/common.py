@@ -6,7 +6,7 @@ from __future__ import annotations
 
 from typing import ClassVar
 
-from pyastts.core.base import Node
+from pytsast.core.base import Node
 
 
 class Identifier(Node):

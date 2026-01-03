@@ -6,13 +6,13 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING, ClassVar, Sequence
 
-from pyastts.core.base import Node
-from pyastts.core.types import Undefined, undefined
-from pyastts.nodes.modifiers import Modifier
+from pytsast.core.base import Node
+from pytsast.core.types import Undefined, undefined
+from pytsast.nodes.modifiers import Modifier
 
 if TYPE_CHECKING:
-    from pyastts.nodes.common import Identifier, QualifiedName
-    from pyastts.nodes.misc import Parameter, TypeParameter
+    from pytsast.nodes.common import Identifier, QualifiedName
+    from pytsast.nodes.misc import Parameter, TypeParameter
 
 # Type alias for any type node
 TypeNode = Node

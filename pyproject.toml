@@ -3,7 +3,7 @@ requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "pyastts"
+name = "pytsast"
 version = "0.1.0"
 description = "Python TypeScript AST Generator - Create TypeScript code from Python"
 readme = "README.md"
@@ -25,7 +25,7 @@ dev = [
 
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["pyastts*"]
+include = ["pytsast*"]
 
 [tool.mypy]
 python_version = "3.11"

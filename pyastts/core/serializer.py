@@ -7,7 +7,7 @@ types of values to their appropriate JSON representation.
 
 from typing import TYPE_CHECKING, Any
 
-from pyastts.core.types import (
+from pytsast.core.types import (
     Undefined,
     SerializedFactory,
     SerializedLiteral,
@@ -17,7 +17,7 @@ from pyastts.core.types import (
 )
 
 if TYPE_CHECKING:
-    from pyastts.core.base import Node
+    from pytsast.core.base import Node
 
 
 class Serializer:
@@ -63,7 +63,7 @@ class Serializer:
             return SerializedNumber(value=str(value))
 
         # Handle Node -> recursive serialization
-        from pyastts.core.base import Node, NodeList
+        from pytsast.core.base import Node, NodeList
 
         if isinstance(value, Node):
             return cls.serialize_node(value)

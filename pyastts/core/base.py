@@ -12,10 +12,10 @@ from typing import Any, ClassVar, Sequence, TYPE_CHECKING
 
 from pydantic import BaseModel, ConfigDict
 
-from pyastts.core.types import Undefined
+from pytsast.core.types import Undefined
 
 if TYPE_CHECKING:
-    from pyastts.core.types import SerializedFactory, SerializedNode
+    from pytsast.core.types import SerializedFactory, SerializedNode
 
 
 class Node(BaseModel, ABC):
@@ -61,7 +61,7 @@ class Node(BaseModel, ABC):
         Returns a SerializedFactory that can be converted to JSON and
         processed by the TypeScript parser.
         """
-        from pyastts.core.serializer import Serializer
+        from pytsast.core.serializer import Serializer
 
         return Serializer.serialize_node(self)
 
@@ -83,7 +83,7 @@ class NodeList(BaseModel):
 
     def serialize(self) -> list["SerializedNode"]:
         """Serialize all items in the list."""
-        from pyastts.core.serializer import Serializer
+        from pytsast.core.serializer import Serializer
 
         return [Serializer.serialize_value(item) for item in self.items]
 

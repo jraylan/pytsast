@@ -6,16 +6,16 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING, ClassVar, Sequence
 
-from pyastts.core.base import Node
-from pyastts.core.types import Undefined, undefined
-from pyastts.nodes.misc import Decorator
-from pyastts.nodes.modifiers import Modifier
+from pytsast.core.base import Node
+from pytsast.core.types import Undefined, undefined
+from pytsast.nodes.misc import Decorator
+from pytsast.nodes.modifiers import Modifier
 
 if TYPE_CHECKING:
-    from pyastts.nodes.common import Identifier
-    from pyastts.nodes.expressions import Expression
-    from pyastts.nodes.declarations import VariableDeclarationList
-    from pyastts.nodes.misc import CaseBlock, CatchClause
+    from pytsast.nodes.common import Identifier
+    from pytsast.nodes.expressions import Expression
+    from pytsast.nodes.declarations import VariableDeclarationList
+    from pytsast.nodes.misc import CaseBlock, CatchClause
 
 
 class Block(Node):

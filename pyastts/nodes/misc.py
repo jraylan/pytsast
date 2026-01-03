@@ -7,15 +7,15 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING, ClassVar, Sequence, Union
 
-from pyastts.core.base import Node
-from pyastts.core.types import Undefined, undefined
-from pyastts.nodes.modifiers import Modifier
+from pytsast.core.base import Node
+from pytsast.core.types import Undefined, undefined
+from pytsast.nodes.modifiers import Modifier
 
 if TYPE_CHECKING:
-    from pyastts.nodes.common import Identifier
-    from pyastts.nodes.expressions import Expression
-    from pyastts.nodes.statements import Block
-    from pyastts.nodes.type_nodes import TypeNode
+    from pytsast.nodes.common import Identifier
+    from pytsast.nodes.expressions import Expression
+    from pytsast.nodes.statements import Block
+    from pytsast.nodes.type_nodes import TypeNode
 
 
 # ============================================================================

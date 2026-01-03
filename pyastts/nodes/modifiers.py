@@ -6,8 +6,8 @@ from __future__ import annotations
 
 from typing import ClassVar
 
-from pyastts.nodes.keywords import Keyword
-from pyastts.core.syntax_kind import SyntaxKind
+from pytsast.nodes.keywords import Keyword
+from pytsast.core.syntax_kind import SyntaxKind
 
 
 class Modifier(Keyword):
