@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.2](https://github.com/jraylan/pytsast/compare/v0.1.1...v0.1.2) (2026-01-03)
+
+
+### Bug Fixes
+
+* fix workflow chain ([04e8d1e](https://github.com/jraylan/pytsast/commit/04e8d1eb2a3953c74b2443cf6fc7e1cd27b29baf))
+
 ## [0.1.1](https://github.com/jraylan/pytsast/compare/v0.1.0...v0.1.1) (2026-01-03)
 
 
