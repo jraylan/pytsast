@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.3](https://github.com/jraylan/pytsast/compare/v0.1.2...v0.1.3) (2026-01-03)
+
+
+### Bug Fixes
+
+* fix typos ([6167e2a](https://github.com/jraylan/pytsast/commit/6167e2abd31d98aaed0e0982fff1044af6949d62))
+* fix workflows ([6167e2a](https://github.com/jraylan/pytsast/commit/6167e2abd31d98aaed0e0982fff1044af6949d62))
+
 ## [0.1.2](https://github.com/jraylan/pytsast/compare/v0.1.1...v0.1.2) (2026-01-03)
 
 
