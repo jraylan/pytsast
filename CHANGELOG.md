@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.6](https://github.com/jraylan/pytsast/compare/v0.1.5...v0.1.6) (2026-01-07)
+
+
+### Bug Fixes
+
+* fix package name ([3103a59](https://github.com/jraylan/pytsast/commit/3103a591c4ffc282b3477d4bba6a9c478b9ea8c2))
+
 ## [0.1.5](https://github.com/jraylan/pytsast/compare/v0.1.4...v0.1.5) (2026-01-03)
 
 
